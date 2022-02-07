@@ -130,7 +130,7 @@ IMAGE:
     -Sık kullanılan dosyalar Docker file da alt satırlara konulursa cache ile zaman kazanılmış olur             
 
 
-/////////   LINUX   //////////
+-/////////   LINUX   //////////
  
 -& komutun arkada devam etmesini sağlar  
 -cat çalıştır
@@ -154,8 +154,8 @@ IMAGE:
 
 ------- JENKINS -------
 
-docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
-docker container run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+-docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+-docker container run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
 
 
 
