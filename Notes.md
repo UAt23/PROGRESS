@@ -154,10 +154,23 @@ IMAGE:
 
 ------- JENKINS -------
 
+Jenkins 
+
 -docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
 -docker container run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
 
-!!! Jenkins in ne olduğunu anlamaya çalışıyorum
+
+
+C(I/T/D) 
+
+    -Delivery manuel hassas
+    -Deployment az kritik veya testler ile sağlama alınmış değiişimler
+    -Integration
+        -Test aşamaları (unit, integration, etc.) 
+        -Sonuçlar ile çıkan durumların bildirilmesi
+        -Olumlu test sonuçları ile kırılmalardan arındırılmış yeni yapı 
+
+
 
 
 
