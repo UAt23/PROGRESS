@@ -165,55 +165,48 @@ Jenkins
 
 
 
+    -- Commands --
+       
+        --Jenkisn container--
+       
+        -docker container run --name jenkins-blueocean --rm -d --network jenkins -e DOCKER_HOST=tcp://docker:2376 -e DOCKER_CERT_PATH=/certs/client -e DOCKER_TLS_VERIFY=1 -v jenkins-data:/var/jenkins_home -v jenkins-docker-certs:/certs/client:ro -p 8080:8080 -p 50000:50000 myjenkins-blueocean:2.319.2-1
+            -used this one to create the container
 
--docker container run --name jenkins-blueocean --rm -d --network jenkins -e DOCKER_HOST=tcp://docker:2376 -e DOCKER_CERT_PATH=/certs/client -e DOCKER_TLS_VERIFY=1 -v jenkins-data:/var/jenkins_home -v jenkins-docker-certs:/certs/client:ro -p 8080:8080 -p 50000:50000 myjenkins-blueocean:2.319.2-1
-    -used this one to create the container
+        -docker container logs ID
+            -detach modda çalıştırdığım için localhost:8080 ile bağlanmam için gerekli şifreyi loglardan almak için kullandım
 
--docker container logs ID
-    -detach modda çalıştırdığım için localhost:8080 ile bağlanmam için gerekli şifreyi loglardan almak için kullandım
+        -localhost:8080 üzerinden standart pluginleri yükledim 
 
--localhost:8080 üzerinden standart pluginleri yükledim 
+        -docker run --name jenkins-docker --rm --detach --privileged --network jenkins --network-alias docker --env DOCKER_TLS_CERTDIR=/certs --volume jenkins-docker-certs:/certs/client --volume jenkins-data:/var/jenkins_home --publish 2376:2376 docker:dind
+        
+        --Jenkisn Image--
 
-Jenkisn Image ------
-
-docker run --name jenkins-docker --rm --detach ^
-  --privileged --network jenkins --network-alias docker ^
-  --env DOCKER_TLS_CERTDIR=/certs ^
-  --volume jenkins-docker-certs:/certs/client ^
-  --volume jenkins-data:/var/jenkins_home ^
-  --publish 2376:2376 ^
-  docker:dind
-
-  docker build -t myjenkins-blueocean:2.319.2-1 .
+            -docker build -t myjenkins-blueocean:2.319.2-1 .
 
 
-----Dockerfile -----
-FROM jenkins/jenkins:2.319.2-jdk11
-USER root
-RUN apt-get update && apt-get install -y lsb-release
-RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
-  https://download.docker.com/linux/debian/gpg
-RUN echo "deb [arch=$(dpkg --print-architecture) \
-  signed-by=/usr/share/keyrings/docker-archive-keyring.asc] \
-  https://download.docker.com/linux/debian \
-  $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
-RUN apt-get update && apt-get install -y docker-ce-cli
-USER jenkins
-RUN jenkins-plugin-cli --plugins "blueocean:1.25.2 docker-workflow:1.27"
+        -- Dockerfile --
+            -FROM jenkins/jenkins:2.319.2-jdk11
+            -USER root
+            -RUN apt-get update && apt-get install -y lsb-release
+            -RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc https://download.docker.com/linux/debian/gpg
+            -RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.asc] https://download.docker.com/linux/debian $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list$
+            -RUN apt-get update && apt-get install -y docker-ce-cli
+            -USER jenkins
+            -RUN jenkins-plugin-cli --plugins "blueocean:1.25.2 docker-workflow:1.27"
 
 
 
 
 
 
-C(I/T/D) 
+        -- C(I/T/D) -- 
 
-    -Delivery manuel hassas
-    -Deployment az kritik veya testler ile sağlama alınmış değiişimler
-    -Integration
-        -Test aşamaları (unit, integration, etc.) 
-        -Sonuçlar ile çıkan durumların bildirilmesi
-        -Olumlu test sonuçları ile kırılmalardan arındırılmış yeni yapı 
+            -Delivery manuel hassas
+            -Deployment az kritik veya testler ile sağlama alınmış değiişimler
+            -Integration
+                -Test aşamaları (unit, integration, etc.) 
+                -Sonuçlar ile çıkan durumların bildirilmesi
+                -Olumlu test sonuçları ile kırılmalardan arındırılmış yeni yapı 
 
 
 
