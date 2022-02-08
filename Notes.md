@@ -159,6 +159,13 @@ Jenkins
 <!-- -docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
 -docker container run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11 -->
 
+    -- IMPORTANT --
+        -Jenkis container'ını yarattığımız belirli bir volume ile çalıştırıyoruz. Bu sayede jenkins üzerinde yarattığmız Jobs lara yeni ama aynı volume ile çalıştırılmış containerdan da erişebiliyoruz.
+            --https://www.youtube.com/watch?v=tNyx6XzvRGs&list=PLVx1qovxj-amqyqHceAhkcsopzi4PFcKc&index=45
+
+
+
+
 -docker container run --name jenkins-blueocean --rm -d --network jenkins -e DOCKER_HOST=tcp://docker:2376 -e DOCKER_CERT_PATH=/certs/client -e DOCKER_TLS_VERIFY=1 -v jenkins-data:/var/jenkins_home -v jenkins-docker-certs:/certs/client:ro -p 8080:8080 -p 50000:50000 myjenkins-blueocean:2.319.2-1
     -used this one to create the container
 
