@@ -156,9 +156,16 @@ IMAGE:
 
 Jenkins 
 
--docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
--docker container run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+<!-- -docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+-docker container run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11 -->
 
+-docker container run --name jenkins-blueocean --rm -d --network jenkins -e DOCKER_HOST=tcp://docker:2376 -e DOCKER_CERT_PATH=/certs/client -e DOCKER_TLS_VERIFY=1 -v jenkins-data:/var/jenkins_home -v jenkins-docker-certs:/certs/client:ro -p 8080:8080 -p 50000:50000 myjenkins-blueocean:2.319.2-1
+    -used this one to create the container
+
+-docker container logs ID
+    -detach modda çalıştırdığım için localhost:8080 ile bağlanmam için gerekli şifreyi loglardan almak için kullandım
+
+-localhost:8080 üzerinden standart pluginleri yükledim 
 
 Jenkisn Image ------
 
