@@ -214,6 +214,11 @@ Jenkins
           - İş tanımlama
 
 
+    -- Makefile --
+
+        - Going back to the example above, when make was executed, the entire command echo "Hello World" was displayed, followed by actual command output. We often don't want that. To suppress echoing the actual command, we need to start echo with @: 
+            -say_hello:
+            -    @echo "Hello World"
 
 
 
