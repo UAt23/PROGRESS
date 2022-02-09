@@ -210,7 +210,7 @@ Jenkins
 
 
         -- Jenkins project --
-            -
+          - Agent tanımlama
 
 
 
