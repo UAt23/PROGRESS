@@ -4,12 +4,23 @@
             -Dockerfile içerisinde USER ile tanımlanmış root dışında alt satırlarda başka bir user bulunmaması gerekir. Var ise bu kullanıcı için izin işlemleri gereklidir.
 
     -Shell içerisinde build C++ geliştirmesi yapabilmek için gerekli olan g++ yüklenmelidir.
-        -Docker Desktop'ın Container sekmesinden cli açılıp [apt install g++] komutu ile yapılabilir. (Ya da terminalden container ın içine de girilebilir)
+        -Docker Desktop'ın Container sekmesinden cli açılıp 
+            [apt install g++] 
+        komutu ile yapılabilir. (Ya da terminalden container ın içine de girilebilir)
 
         -İşlemin ardından 
             g++ main.cpp -o out
             ./out
-        ile jenkins içerisinde build işlemi yaplıp konsola çıktı yazdırılabilir. (Bu durumda: 
+        veya
+
+            make build 
+            ./out
+
+        ile jenkins içerisinde build işlemi yaplıp konsola çıktı yazdırılabilir. Makefile içerisine build tagi altına ilk komutu taşımak gerekir (build: g++ main.cpp -o out)
+            -make komutunun çalışması için container içerisinde 
+                [apt install make] 
+        
+         (Bu durumda: 
                 Started by user uguralp
                 Running as SYSTEM
                 Building in workspace /var/jenkins_home/workspace/first-project
@@ -35,6 +46,4 @@
                 Hello, Jenkins
                 I have successfully built and run
                 Finished: SUCCESS
-        
-        
         )             
