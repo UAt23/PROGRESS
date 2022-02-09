@@ -211,6 +211,7 @@ Jenkins
 
         -- Jenkins project --
           - Agent tanımlama
+          - İş tanımlama
 
 
 
