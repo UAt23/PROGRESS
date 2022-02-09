@@ -209,7 +209,8 @@ Jenkins
                 -Olumlu test sonuçları ile kırılmalardan arındırılmış yeni yapı 
 
 
-
+        -- Jenkins project --
+            -
 
 
 
