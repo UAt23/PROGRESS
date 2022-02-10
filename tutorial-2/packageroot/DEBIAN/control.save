@@ -1,6 +1,0 @@
-Package: hello
-Version: 1.0.0-1
-Architecture: all
-Maintainer: John Doe <j
-Depends: python
-Description: Hello world as debian package
