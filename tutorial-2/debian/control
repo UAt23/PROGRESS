@@ -1,0 +1,10 @@
+Source: hello
+Section: devel
+Priority: optional
+Maintainer: Ugur Alp
+Build-Depends: debhelper (>= 9)
+
+Package: hello
+Architecture: all
+Depends: python
+Description: Hello world python packed in debian
