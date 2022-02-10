@@ -46,4 +46,56 @@
                 Hello, Jenkins
                 I have successfully built and run
                 Finished: SUCCESS
-        )             
+        )
+
+
+
+ -- Debian Package --
+
+        -[
+            #!/usr/bin/env python
+            print("hello 1.0.0")
+        ]
+
+        -[
+            mkdir tutorial-1
+            cd tutorial-1
+            editor hello   # put the above source code in this file
+            chmod +x hello
+        ]
+
+
+        -mkdir packageroot
+        -mkdir packageroot/DEBIAN
+        -nano packageroot/DEBIAN/control                      
+        -[
+            Package: hello
+            Version: 1.0.0-1
+            Architecture: all
+            Maintainer: John Doe <john@doe.com>
+            Depends: python
+            Description: John's hello package
+            John's hello package is written in Python
+            and prints a greeting.
+            .
+            It is awesome.
+        ]
+
+        -[
+            mkdir -p packageroot/usr/bin
+            cp hello packageroot/usr/bin/
+        ]
+
+        -dpkg-deb -b packageroot hello_1.0.0_all.deb
+
+        -apt install gdebi
+
+        -gdebi -n ./hello_1.0.0_all.deb
+        -hello
+
+        --OUTPUT: --
+            /usr/bin/hello: line 2: syntax error near unexpected token `"hello 1.0.0"'
+            /usr/bin/hello: line 2: `print("hello 1.0.0")'
+
+
+

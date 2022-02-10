@@ -139,7 +139,7 @@ IMAGE:
 -; aynı satır birden fazla komut
 -&& solundaki komut olumlu cevap döndürürse sağdakini çalıştır
 -| soldakinin çıktısını sağdakine girdi olarak ver
--|| soldakini çalıştır olumlu sonuç geiirse sağdakini çalıştırma
+-|| soldakini çalıştır olumlu sonuç geilirse sağdakini çalıştırma
 
 
 //////////////////////////////
@@ -224,7 +224,7 @@ Jenkins
         -Resource:
             https://github.com/FooBarWidget/debian-packaging-for-the-modern-developer/tree/master/tutorial-1
 
-            
+
 
 
 
