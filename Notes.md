@@ -220,6 +220,11 @@ Jenkins
             -say_hello:
             -    @echo "Hello World"
 
+    -- Debian Package --
+        -Resource:
+            https://github.com/FooBarWidget/debian-packaging-for-the-modern-developer/tree/master/tutorial-1
+
+            
 
 
 
