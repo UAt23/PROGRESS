@@ -98,4 +98,8 @@
             /usr/bin/hello: line 2: `print("hello 1.0.0")'
 
 
-
+ -- Docker Permission Denied Solution --
+        sudo groupadd docker
+        sudo usermod -aG docker ${USER}
+        su -s ${USER}
+    
