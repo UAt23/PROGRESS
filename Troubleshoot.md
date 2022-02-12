@@ -103,3 +103,11 @@
         sudo usermod -aG docker ${USER}
         su -s ${USER}
     
+-- Error checking clusters with "kubectl get clusters" --
+    -The connection to the server localhost:8080 was refused - did you specify the right host or port?
+    ^^^Solution:
+        -Reinstalled kind and kubectl via brew
+        -Deleted the cluster with "kind delete clusters cluster-name-here"
+        -Created a new cluster "kind create cluster --name cluster-name-here"
+        -Checked the cluster with kubectl get clusters
+          
