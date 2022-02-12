@@ -110,4 +110,4 @@
         -Deleted the cluster with "kind delete clusters cluster-name-here"
         -Created a new cluster "kind create cluster --name cluster-name-here"
         -Checked the cluster with kubectl get clusters
-          
+        -Also check: https://www.baeldung.com/ops/kubernetes-kind  
