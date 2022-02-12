@@ -228,6 +228,9 @@ Jenkins
         @mkdir package-trial
 	    @cd package-trial
 	    echo -e "g++ main.cpp -o out\n./out " > hello
-
+    
+    
+    -- Creating Docker Local Registry --
+        - Kubernetes can not understand the images on Docker Hub
 
 
