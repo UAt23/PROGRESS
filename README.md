@@ -9,4 +9,5 @@ This repository contains information about my learning progress
       -The connection to the server localhost:8080 was refused - did you specify the right host or port?
     -- Solved --> check troubleshoot.md  
 
-    -Reached Kubernetes part of the course 
+    -error: unable to forward port because pod is not running. Current status=Pending
+      -Can't get pod to running it stack in ImagePullBackOff status  
