@@ -103,13 +103,13 @@
         sudo usermod -aG docker ${USER}
         su -s ${USER}
     
--- Error checking clusters with "kubectl get clusters" --
+-- Error checking clusters with "kubectl get nodes" --
     -The connection to the server localhost:8080 was refused - did you specify the right host or port?
     ^^^Solution:
         -Reinstalled kind and kubectl via brew
         -Deleted the cluster with "kind delete clusters cluster-name-here"
         -Created a new cluster "kind create cluster --name cluster-name-here"
-        -Checked the cluster with kubectl get clusters
+        -Checked the cluster with kubectl get nodes
         -Also check: https://www.baeldung.com/ops/kubernetes-kind  
 
 
@@ -120,3 +120,4 @@
         -docker tag explorecalifornia.com 127.0.0.1:5000/explorecalifornia.com
         -docker push 127.0.0.1:5000/explorecalifornia.com
         (can chack: https://forums.docker.com/t/unable-to-get-private-docker-registry-to-work-locally-works-remotely/44144)
+        
