@@ -111,3 +111,9 @@
         -Created a new cluster "kind create cluster --name cluster-name-here"
         -Checked the cluster with kubectl get clusters
         -Also check: https://www.baeldung.com/ops/kubernetes-kind  
+
+
+--Pushing to repository with Docker
+    docker push localhost:5000/explorecalifornia.com
+    -ERROR: Get "http://localhost:5000/v2/": net/http: request canceled (Client.Timeout exceeded while awai...
+    -SOLUTON: Check whether the ports of the first docker container and the local registry are same. I had another container on 5000 so I was running explorecalifornia.com on 5001.              

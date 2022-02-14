@@ -1,11 +1,11 @@
 .PHONY: run_website install_kind install_kubectl create_kind_cluster \ 
-	install_brew create_docker_registry create_registry_to_kind_network \
-	create_registry_to_kind create_kind_cluster_with_registry
+	install_brew create_docker_registry connect_registry_to_kind_network \
+	connect_registry_to_kind create_kind_cluster_with_registry 
 
 
 run_website:
 	docker build -t explorecalifornia.com . && \
-		docker run -p 5001:80 -d --name explorecalifornia.com --rm explorecalifornia.com
+		docker run -p 5000:80 -d --name explorecalifornia.com --rm explorecalifornia.com
 
 install_brew:
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -26,10 +26,10 @@ create_docker_registry:
 	else docker run --name local-registry -d --restart=always -p 5000:5000 registry:2; \
 	fi
 
-create_registry_to_kind_network:
+connect_registry_to_kind_network:
 	docker network connect kind local-registry || true
 
-create_registry_to_kind: connect_registry_to_kind
+connect_registry_to_kind: connect_registry_to_kind_network
 	kubectl apply -f ./kind_configmap.yaml
 
 create_kind_cluster_with_registry:
