@@ -228,7 +228,35 @@ Jenkins
         @mkdir package-trial
 	    @cd package-trial
 	    echo -e "g++ main.cpp -o out\n./out " > hello
-    
+
+        -create and install
+            
+           - root@3d697729903e:/# gcc main.cpp -lstdc++ -o out
+           - root@3d697729903e:/# ./out
+                -Hello, World
+                -Hello, Jenkins
+                -I have successfully built and run
+            - root@3d697729903e:/# mkdir hello_1.0.0_amd64
+            - root@3d697729903e:/# cd hello_1.0.0_amd64/
+            - root@3d697729903e:/hello_1.0.0_amd64# mkdir DEBIAN
+            - root@3d697729903e:/hello_1.0.0_amd64# nano DEBIAN/control
+            - root@3d697729903e:/hello_1.0.0_amd64# mkdir -p usr/bin
+            - root@3d697729903e:/hello_1.0.0_amd64# cp ../out usr/bin/
+            - root@3d697729903e:/hello_1.0.0_amd64# ls
+                -DEBIAN  usr
+            - root@3d697729903e:/hello_1.0.0_amd64# cd ..
+            - root@3d697729903e:/# ls
+                -bin  boot  dev  etc  hello_1.0.0_amd64  home  lib  lib64  main.cpp  media  mnt  opt  out  proc  root  run  sbin  srv  sys  tmp  usr  var
+            - root@3d697729903e:/# dpkg-deb -b hello_1.0.0_amd64/
+                -dpkg-deb: building package 'hello' in 'hello_1.0.0_amd64.deb'.
+            - root@3d697729903e:/# ls
+                -bin  boot  dev  etc  hello_1.0.0_amd64  hello_1.0.0_amd64.deb  home  lib  lib64  main.cpp  media  mnt  opt  out  proc  root  run  sbin  srv    sys  tmp  usr  var
+            - root@3d697729903e:/# apt install ./hello_1.0.0_amd64.deb
+            - root@3d697729903e:/# out
+                -Hello, World
+                -Hello, Jenkins
+                -I have successfully built and run
+        
     
     -- Creating Docker Local Registry --
         - Kubernetes can not understand the images on Docker Hub
