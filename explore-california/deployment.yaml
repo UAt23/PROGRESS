@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  creationTimestamp: null
   labels:
     app: explorecalifornia.com
   name: explorecalifornia.com
@@ -18,6 +19,6 @@ spec:
     spec:
       containers:
       - image: localhost:5000/explorecalifornia.com
-        name: explorecalifornia-com-9rp2k
+        name: explorecalifornia-com-75fpd
         resources: {}
 status: {}

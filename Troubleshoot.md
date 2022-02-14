@@ -116,6 +116,7 @@
 --Pushing to repository with Docker
     docker push localhost:5000/explorecalifornia.com
     -ERROR: Get "http://localhost:5000/v2/": net/http: request canceled (Client.Timeout exceeded while awai...
-    -SOLUTON: 
-        1.Check whether the ports of the first docker container and the local registry are same. I had another container on 5000 so I was running explorecalifornia.com on 5001.
-        -ERROR: error parsing HTTP 404 response body: invalid character '<' looking for beginning of value: "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx/1.21.6</center>\r\n</body>\r\n</html>\r\n"              
+    -Solution: User tagging with 127.0.0.1 instead of localhost
+        -docker tag explorecalifornia.com 127.0.0.1:5000/explorecalifornia.com
+        -docker push 127.0.0.1:5000/explorecalifornia.com
+        (can chack: https://forums.docker.com/t/unable-to-get-private-docker-registry-to-work-locally-works-remotely/44144)
