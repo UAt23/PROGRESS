@@ -1,4 +1,7 @@
-.PHONY: run_website install_kind install_kubectl create_kind_cluster install_brew create_docker_registry
+.PHONY: run_website install_kind install_kubectl create_kind_cluster \ 
+	install_brew create_docker_registry create_registry_to_kind_network \
+	create_registry_to_kind create_kind_cluster_with_registry
+
 
 run_website:
 	docker build -t explorecalifornia.com . && \
@@ -14,7 +17,7 @@ install_kubectl:
 	brew install kubectl
 
 create_kind_cluster: install_brew install_kind install_kubectl
-	kind create cluster --name explorecalifornia.com && \
+	kind create cluster --name explorecalifornia.com || true && \
 		kubectl get nodes
 	
 create_docker_registry:
@@ -22,3 +25,12 @@ create_docker_registry:
 	then echo "---> local-registry already created; skipping"; \
 	else docker run --name local-registry -d --restart=always -p 5000:5000 registry:2; \
 	fi
+
+create_registry_to_kind_network:
+	docker network connect kind local-registry || true
+
+create_registry_to_kind: connect_registry_to_kind
+	kubectl apply -f ./kind_configmap.yaml
+
+create_kind_cluster_with_registry:
+	$(MAKE) create_kind_cluster && $(MAKE) connect_registry_to_kind
