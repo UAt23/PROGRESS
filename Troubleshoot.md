@@ -120,4 +120,20 @@
         -docker tag explorecalifornia.com 127.0.0.1:5000/explorecalifornia.com
         -docker push 127.0.0.1:5000/explorecalifornia.com
         (can chack: https://forums.docker.com/t/unable-to-get-private-docker-registry-to-work-locally-works-remotely/44144)
+
+
+        Events:
+  Type     Reason     Age                   From               Message
+  ----     ------     ----                  ----               -------
+  Normal   Scheduled  12m                   default-scheduler  Successfully assigned default/explorecalifornia.com-7
+755d65f5d-rk498 to explorecalifornia.com-control-plane
+  Normal   Pulling    11m (x4 over 12m)     kubelet            Pulling image "127.0.0.1:5000/explorecalifornia.com" 
+  Warning  Failed     11m (x4 over 12m)     kubelet            Failed to pull image "127.0.0.1:5000/explorecaliforni
+a.com": rpc error: code = Unknown desc = failed to pull and unpack image "127.0.0.1:5000/explorecalifornia.com:lates
+t": failed to resolve reference "127.0.0.1:5000/explorecalifornia.com:latest": failed to do request: Head "http://12
+7.0.0.1:5000/v2/explorecalifornia.com/manifests/latest": dial tcp 127.0.0.1:5000: connect: connection refused       
+  Warning  Failed     11m (x4 over 12m)     kubelet            Error: ErrImagePull
+  Warning  Failed     11m (x6 over 12m)     kubelet            Error: ImagePullBackOff
+  Normal   BackOff    2m44s (x42 over 12m)  kubelet            Back-off pulling image "127.0.0.1:5000/explorecalifor
+nia.com"
         

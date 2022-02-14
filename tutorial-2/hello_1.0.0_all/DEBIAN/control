@@ -1,6 +1,5 @@
 Package: hello
 Version: 1.0.0-1
-Architecture: all
+Architecture: amd64
 Maintainer: Ugur Alp <uguralp9948@gmail.com>
-Depends: curl
 Description: hello world as debian package

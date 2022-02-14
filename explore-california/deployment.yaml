@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  creationTimestamp: null
   labels:
     app: explorecalifornia.com
   name: explorecalifornia.com
@@ -12,11 +13,12 @@ spec:
   strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
         app: explorecalifornia.com
     spec:
       containers:
-      - image: 127.0.0.1:5000/explorecalifornia.com
-        name: explorecalifornia-com-7hxms
+      - image: localhost:5000/explorecalifornia.com
+        name: explorecalifornia-com-xc7dx
         resources: {}
 status: {}

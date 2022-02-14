@@ -1,5 +1,0 @@
-hello (2.0.0-1) stretch; urgency=medium
-
-  * Initial packaging work with dpkg-buildpackage.
-
- -- John Doe <john@doe.com>  Thu, 06 Jul 2017 09:19:24 +000
