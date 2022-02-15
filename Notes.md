@@ -262,3 +262,13 @@ Jenkins
         - Kubernetes can not understand the images on Docker Hub
 
 
+    --Jenkins Docker Kubernetes --
+        - CI/CD pipeline for applications build on docker using Jenkins and Kubernetes
+        - To understand the workflow here is an example:
+          - Code changes are committed to the version control system GitHub
+          - Each commit to GitHub automatically triggers Jenkins build. Jenkins uses Maven to compile the code, run unit test and perform additional checks – code coverage, code quality, etc.
+          - Once the code has been successfully compiled and all the tests have been passed. Jenkins builds a new docker image and pushes it to the Docker registry.
+          - Jenkins notifies Kubernetes of the new image available for deployment.
+          - Kubernetes pulls the new docker image from the docker registry.
+          - Kubernetes deploys and manages the docker instance/container.
+
