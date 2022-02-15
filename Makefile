@@ -7,9 +7,9 @@ build: install
 	g++ main.cpp -lstdc++ -o out
 
 create_files_for_packaging:
-	[-d hello_1.0.0_amd64] || mkdir hello_1.0.0_amd64
+	mkdir -p hello_1.0.0_amd64
 	cd hello_1.0.0_amd64/
-	mkdir DEBIAN
+	mkdir -p DEBIAN
 	cp ../control DEBIAN/
 	mkdir -p usr/bin
 	cp ../out usr/bin/
