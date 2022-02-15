@@ -119,7 +119,7 @@
     -Solution: User tagging with 127.0.0.1 instead of localhost
         -docker tag explorecalifornia.com 127.0.0.1:5000/explorecalifornia.com
         -docker push 127.0.0.1:5000/explorecalifornia.com
-        (can chack: https://forums.docker.com/t/unable-to-get-private-docker-registry-to-work-locally-works-remotely/44144)
+        (can check: https://forums.docker.com/t/unable-to-get-private-docker-registry-to-work-locally-works-remotely/44144)
 
 
         Events:

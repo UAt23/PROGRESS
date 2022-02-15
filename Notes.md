@@ -264,11 +264,19 @@ Jenkins
 
     --Jenkins Docker Kubernetes --
         - CI/CD pipeline for applications build on docker using Jenkins and Kubernetes
-        - To understand the workflow here is an example:
+        [
+        - To understand the workflow here is an example: (https://www.betsol.com/blog/devops-using-jenkins-docker-and-kubernetes/#:~:text=Jenkins%20builds%20a%20new%20docker,manages%20the%20docker%20instance%2Fcontainer.)
+          
           - Code changes are committed to the version control system GitHub
+          
           - Each commit to GitHub automatically triggers Jenkins build. Jenkins uses Maven to compile the code, run unit test and perform additional checks – code coverage, code quality, etc.
+          
           - Once the code has been successfully compiled and all the tests have been passed. Jenkins builds a new docker image and pushes it to the Docker registry.
+          
           - Jenkins notifies Kubernetes of the new image available for deployment.
+          
           - Kubernetes pulls the new docker image from the docker registry.
+          
           - Kubernetes deploys and manages the docker instance/container.
-
+        ]
+        - ![alt text](https://github.com/UAt23/PROGRESS/blob/main/okl.png?raw=true)
