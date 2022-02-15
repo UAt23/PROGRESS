@@ -20,4 +20,4 @@ dist: build create_files_for_packaging
 create_docker_container:
 	docker build -t ubuntu .
 	docker run --name project1 -d --rm ubuntu
-	docker-compose logs project1	
+	docker compose logs project1	
