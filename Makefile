@@ -20,7 +20,7 @@ create_files_for_packaging:
 	mkdir -p usr/bin
 	cp ../out usr/bin/
 	cd ..
-dist: create_files_for_packaging
+dist: build create_files_for_packaging 
 	dpkg-deb -b hello_1.0.0_amd64/
 	apt install ./hello_1.0.0_amd64.deb
 	out
