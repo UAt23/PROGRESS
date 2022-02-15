@@ -184,6 +184,12 @@ Jenkins
             -docker build -t myjenkins-blueocean:2.319.2-1 .
 
 
+        --Creating container inside Jenkins container
+            --link: https://stackoverflow.com/questions/36185035/how-to-mount-docker-socket-as-volume-in-docker-container-with-correct-group   
+
+        --Limiting cpu usage of wsl
+            -https://www.youtube.com/watch?v=JmkysqY5iu8     
+
         -- Dockerfile --
             -FROM jenkins/jenkins:2.319.2-jdk11
             -USER root
