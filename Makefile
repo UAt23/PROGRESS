@@ -10,13 +10,7 @@ create_files_for_packaging:
 	mkdir hello_1.0.0_amd64
 	cd hello_1.0.0_amd64/
 	mkdir DEBIAN
-	cat <<EOT >> control
-	Package: hello
-	Version: 1.0.0-1
-	Architecture: amd64
-	Maintainer: Ugur Alp <uguralp9948@gmail.com>
-	Description: hello world as debian package
-	EOT
+	cp ../control DEBIAN/
 	mkdir -p usr/bin
 	cp ../out usr/bin/
 	cd ..
