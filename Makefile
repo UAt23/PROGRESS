@@ -18,5 +18,5 @@ dist: build create_files_for_packaging
 	out
 
 create_docker_container:
-	docker build -t ubuntu
+	docker build -t ubuntu .
 	docker run --name project1 -d --rm ubuntu  	
