@@ -1,10 +1,10 @@
 .PHONY: build dist
 
 install:
-	apt install gcc -y
+	apt install g++ -y
 
 build: install
-	gcc main.cpp -lstdc++ -o out
+	g++ main.cpp -lstdc++ -o out
 	./out
 
 dist: 
