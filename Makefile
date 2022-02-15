@@ -16,3 +16,6 @@ dist: build create_files_for_packaging
 	dpkg-deb -b hello_1.0.0_amd64/
 	apt install ./hello_1.0.0_amd64.deb
 	out
+
+create_docker_container:
+	docker run --name project1 -d -p 5000:5000 -p 8080:80 -v project1 ubuntu:xenial  	
