@@ -18,4 +18,5 @@ dist: build create_files_for_packaging
 	out
 
 create_docker_container:
-	docker run --name project1 -d -p 5000:5000 -p 8080:80 -v project1 ubuntu:xenial  	
+	docker ps -a
+	docker run --name project1 -d -it ubuntu:xenial  	
