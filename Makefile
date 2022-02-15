@@ -4,8 +4,8 @@ install:
 	apt install gcc -y
 
 build: install
-	@gcc main.cpp -o out
-	@./out
+	gcc main.cpp -lstdc++ -o out
+	./out
 
 dist: 
-	
+	dpkg-deb -b hello_

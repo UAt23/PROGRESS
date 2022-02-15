@@ -224,10 +224,6 @@ Jenkins
         -Resource:
             https://github.com/FooBarWidget/debian-packaging-for-the-modern-developer/tree/master/tutorial-1
 
-        -deleted
-        @mkdir package-trial
-	    @cd package-trial
-	    echo -e "g++ main.cpp -o out\n./out " > hello
 
         -create and install
             
