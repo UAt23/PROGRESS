@@ -11,6 +11,7 @@ create_files_for_packaging:
 	ls
 	cd hello_1.0.0_amd64/
 	mkdir -p DEBIAN
+	ls
 	cp ../control DEBIAN/
 	mkdir -p usr/bin
 	cp ../out usr/bin/
