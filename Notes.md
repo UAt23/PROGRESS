@@ -279,4 +279,4 @@ Jenkins
           
           - Kubernetes deploys and manages the docker instance/container.
         ]
-        - ![alt text](https://github.com/UAt23/PROGRESS/blob/main/okl.png?raw=true)
+![alt text](https://github.com/UAt23/PROGRESS/blob/main/okl.png?raw=true)
