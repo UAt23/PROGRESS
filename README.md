@@ -13,4 +13,5 @@ This repository contains information about my learning progress
       -Can't get pod to running it stack in ImagePullBackOff status
 
     -Shift till the error solved
-      -Trying to understand the pipeline CI/CD and relation of K8s Docker Jenkins     
+      -Trying to understand the pipeline CI/CD and relation of K8s Docker Jenkins
+      -Trying to do Jenkins job with make file to create a debian package     
