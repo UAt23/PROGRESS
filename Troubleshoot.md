@@ -116,24 +116,7 @@
 --Pushing to repository with Docker
     docker push localhost:5000/explorecalifornia.com
     -ERROR: Get "http://localhost:5000/v2/": net/http: request canceled (Client.Timeout exceeded while awai...
-    -Solution: User tagging with 127.0.0.1 instead of localhost
-        -docker tag explorecalifornia.com 127.0.0.1:5000/explorecalifornia.com
-        -docker push 127.0.0.1:5000/explorecalifornia.com
-        (can check: https://forums.docker.com/t/unable-to-get-private-docker-registry-to-work-locally-works-remotely/44144)
+    -Solution: I used minikube instead of kind and followed this site:
+        -link: https://shashanksrivastava.medium.com/how-to-set-up-minikube-to-use-your-local-docker-registry-10a5b564883
+    - Important parts is to using the minikube's docker daemon rather than your machine and configuring the deployment.yaml file container section with port number and the image which you pushed (in this case: localhost:5000/explorecalifornia.com)    
 
-
-        Events:
-  Type     Reason     Age                   From               Message
-  ----     ------     ----                  ----               -------
-  Normal   Scheduled  12m                   default-scheduler  Successfully assigned default/explorecalifornia.com-7
-755d65f5d-rk498 to explorecalifornia.com-control-plane
-  Normal   Pulling    11m (x4 over 12m)     kubelet            Pulling image "127.0.0.1:5000/explorecalifornia.com" 
-  Warning  Failed     11m (x4 over 12m)     kubelet            Failed to pull image "127.0.0.1:5000/explorecaliforni
-a.com": rpc error: code = Unknown desc = failed to pull and unpack image "127.0.0.1:5000/explorecalifornia.com:lates
-t": failed to resolve reference "127.0.0.1:5000/explorecalifornia.com:latest": failed to do request: Head "http://12
-7.0.0.1:5000/v2/explorecalifornia.com/manifests/latest": dial tcp 127.0.0.1:5000: connect: connection refused       
-  Warning  Failed     11m (x4 over 12m)     kubelet            Error: ErrImagePull
-  Warning  Failed     11m (x6 over 12m)     kubelet            Error: ImagePullBackOff
-  Normal   BackOff    2m44s (x42 over 12m)  kubelet            Back-off pulling image "127.0.0.1:5000/explorecalifor
-nia.com"
-        

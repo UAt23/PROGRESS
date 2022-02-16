@@ -23,7 +23,7 @@ create_kind_cluster: install_brew install_kind install_kubectl
 create_docker_registry:
 	if docker ps | grep -q 'local-registry'; \
 	then echo "---> local-registry already created; skipping"; \
-	else docker run --name local-registry -d --restart=always -p 5000:5000 registry:2; \
+	else docker run --name local-registry -d --restart=always --volume ~/.registry/storage:/var/lib/registry -p 5000:5000 registry:2; \
 	fi
 
 connect_registry_to_kind_network:

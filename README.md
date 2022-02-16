@@ -11,6 +11,7 @@ This repository contains information about my learning progress
 
     -error: unable to forward port because pod is not running. Current status=Pending
       -Can't get pod to running it stack in ImagePullBackOff status
+      -(SOLVED) check troubleshoot.md --> Pushing to repository with Docker
 
     -Shift till the error solved
       -Trying to understand the pipeline CI/CD and relation of K8s Docker Jenkins
