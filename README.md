@@ -21,7 +21,10 @@ This repository contains information about my learning progress
          
     -Working on Kubernetes using minikube this time (reached to a checkpoint)
     -Jenkinsfil and C++ test is my topic now
-    -gtest
+    -gtest instalation
+      -ERROR:
+        make[2]: *** [googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj] Error 1
+        make[1]: *** [googletest/CMakeFiles/gtest.dir/all] Error 2
 
 
 

@@ -1,1 +1,2 @@
 -https://www.magalix.com/blog/create-a-ci/cd-pipeline-with-kubernetes-and-jenkins
+-https://www3.ntu.edu.sg/home/ehchua/programming/cpp/cp0_Introduction.html#:~:text=int%20(integer).-,cout%20%3C%3C%20%22hello%2C%20world%22%20%3C%3C%20endl%3B,%2C%20world%22%20to%20the%20console.
