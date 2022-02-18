@@ -282,3 +282,40 @@ Jenkins
           - Kubernetes deploys and manages the docker instance/container.
         ]
 ![alt text](https://github.com/UAt23/PROGRESS/blob/main/okl.png?raw=true)
+
+
+    --TEST
+        -uat23@LAPTOP-9UNO4D91:/mnt/d/WORK/WORK-LOG/GT$ docker run -it ubuntu:xenial
+        -root@b0ce03379a2e:/# apt update
+        -root@b0ce03379a2e:/# apt install wget
+        /-root@b0ce03379a2e:/# cd home/
+        /-root@b0ce03379a2e:/home# apt install git
+        /-root@b0ce03379a2e:/home# git clone https://github.com/google/googletest.git
+        /-root@b0ce03379a2e:/home# cd googletest/
+        /-root@b0ce03379a2e:/home/googletest# mkdir build 
+        /-root@b0ce03379a2e:/home/googletest# cd build/
+        /-root@b0ce03379a2e:/home/googletest/build# cmake ..
+        /-root@b0ce03379a2e:/home/googletest/build# ls /usr/bin
+        -libgtest-dev
+        -root@b0ce03379a2e:/home/googletest/build# ls /usr/src/
+            -gtest
+        -root@b0ce03379a2e:/home/googletest/build# cd /usr/src/gtest/
+        -root@b0ce03379a2e:/usr/src/gtest# cmake CMakeLists.txt
+        -root@b0ce03379a2e:/usr/src/gtest# make 
+        -root@b0ce03379a2e:/usr/src/gtest# cp *.a /usr/lib
+        -root@b0ce03379a2e:/usr/src/gtest# ldconfig                     IMPORTANT MIGHT NEED LATER
+        -root@b0ce03379a2e:/home# git clone https://github.com/alpekin98/self-study-2.git
+        -root@b0ce03379a2e:/home# mkdir deneme
+        -root@b0ce03379a2e:/home# cp self-study-2/*.cpp deneme
+        -root@b0ce03379a2e:/home# cd deneme/
+        root@b0ce03379a2e:/home/deneme# ls
+            -main.cpp  test.cpp
+        -root@b0ce03379a2e:/home/deneme# cp ../self-study-2/*.h .
+        -root@b0ce03379a2e:/home/deneme# ls
+            -main.cpp  says_hello_world.h  test.cpp
+        -root@b0ce03379a2e:/home/deneme# cp ../self-study-2/CMakeLists.txt .
+        -root@b0ce03379a2e:/home/deneme# ls
+            -CMakeLists.txt  main.cpp  says_hello_world.h  test.cpp
+        -root@b0ce03379a2e:/home/deneme# cmake CMakeLists.txt
+        -root@b0ce03379a2e:/home/deneme# make
+        -root@b0ce03379a2e:/home/deneme# ./runTests     
