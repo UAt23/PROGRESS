@@ -12,6 +12,7 @@ create_files_for_packaging:
 	cp control hello_1.0.0_amd64/DEBIAN/
 	mkdir -p hello_1.0.0_amd64/usr/bin
 	cp out hello_1.0.0_amd64/usr/bin/
+
 dist: build create_files_for_packaging 
 	dpkg-deb -b hello_1.0.0_amd64/
 	apt install ./hello_1.0.0_amd64.deb
