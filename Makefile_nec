@@ -15,7 +15,7 @@ create_files_for_packaging:
 	mkdir -p $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN
 	touch $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
 	echo 'Package: Triangle' >> $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
-	echo 'Version: 1.0.0-1' >> $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
+	echo 'Version: 1.0-1' >> $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
 	echo 'Architecture: amd64' >> $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
 	echo 'Maintainer: Ugur Alp <uguralp9948@gmail.com>' >> $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
 	echo 'Description: hello world as debian package' >> $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
