@@ -3,7 +3,7 @@
 
 Triangle shw;
 
-TEST(Triangle, InvalideSides) {
+TEST(TriangleTest, InvalideSides) {
     EXPECT_EQ(-1, shw.TypeOfTriangle(-10, 20, 30));
     EXPECT_EQ(-1, shw.TypeOfTriangle(10, -20, 30));
     EXPECT_EQ(-1, shw.TypeOfTriangle(3, 4, -8));
@@ -17,7 +17,7 @@ TEST(TiangleTest, Equivalateral){
     EXPECT_EQ(1, shw.TypeOfTriangle(5, 5, 5));
 }
 TEST(TiangleTest, Isosceles){
-    //EXPECT_EQ(2, shw.TypeOfTriangle(10, 9, 15));
+    //EXPECT_EQ(2, shw.TypeOfTriangle(10, 9, 15));  //This one fails
     EXPECT_EQ(2, shw.TypeOfTriangle(15, 10, 10));
     EXPECT_EQ(2, shw.TypeOfTriangle(10, 15, 10));
 }
