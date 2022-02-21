@@ -4,6 +4,8 @@
 #include <iostream>
 #include <stdlib.h>
 
+int TypeOfTriangle(int, int, int);
+
 class Triangle {
 	public:
 		void sayHelloWorld(){
