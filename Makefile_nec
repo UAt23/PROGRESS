@@ -21,7 +21,7 @@ create_files_for_packaging:
 	echo 'Description: hello world as debian package' >> $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
 
 dist: build create_files_for_packaging 
-	dpkg-deb -b $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/
+	dpkg-deb -b $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}
 	make --file=${MAKE_FILE_NAME} clean
 	apt install ./$(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}.deb
 	${APPLICATION_NAME}
