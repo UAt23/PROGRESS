@@ -25,7 +25,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh "make dist"
+                sh "make --file=Makefile_nec dist"
             }
         }
     }
