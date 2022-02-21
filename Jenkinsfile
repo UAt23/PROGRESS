@@ -4,13 +4,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "make build"
+                echo "Building.."
+                sh "make --file=Makefile_nec build"
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo "Testing.."
+                sh 'cmake CMakeLists.txt'
+                sh 'make'
+                sh "make --file=Makefile_nec test"
             }
+             
         }
         stage('Deploy') {
             steps {

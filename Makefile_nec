@@ -1,4 +1,4 @@
-.PHONY: build dist create_docker_container
+.PHONY: build dist create_docker_container test dist
 
 build: 
 	g++ main.cpp -lstdc++ -o out
