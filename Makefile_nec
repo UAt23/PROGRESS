@@ -5,7 +5,7 @@ build: clean
 	g++ main.o -o ${APPLICATION_NAME}
 
 clean:
-	rm *.o out
+	rm *.o $(APPLICATION_NAME)
 	rm -rf $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}
 
 create_files_for_packaging:
