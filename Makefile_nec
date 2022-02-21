@@ -1,6 +1,6 @@
 .PHONY: build dist create_docker_container test dist clean
 
-build: 
+build: clean
 	g++ -c main.cpp
 	g++ main.o -o ${APPLICATION_NAME}
 
