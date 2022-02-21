@@ -24,6 +24,7 @@ TEST(TiangleTest, Scalan){
     EXPECT_EQ(3, TypeOfTriangle(10, 12, 15));
     EXPECT_EQ(3, TypeOfTriangle(10, 25, 18));
 }
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
