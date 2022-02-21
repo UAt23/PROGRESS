@@ -335,3 +335,6 @@ Jenkins
 
         // Kubernetes HELM CHART var
         // Prometheus, Grafana, Loki, Elasticsearch 
+        
+        -Parameters in Jenkins: https://itnext.io/jenkins-tutorial-part-3-parameterized-pipeline-3898643ac6ad
+         

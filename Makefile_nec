@@ -1,8 +1,12 @@
-.PHONY: build dist create_docker_container test dist
+.PHONY: build dist create_docker_container test dist clean
 
 build: 
 	g++ -c main.cpp
 	g++ main.o -o out
+
+clean:
+	rm *.o out
+	rm -rf hello_1.0.0_amd64
 
 create_files_for_packaging:
 	mkdir -p hello_1.0.0_amd64
@@ -18,6 +22,7 @@ create_files_for_packaging:
 
 dist: build create_files_for_packaging 
 	dpkg-deb -b hello_1.0.0_amd64/
+	make --file=Makefile_nec clean
 	apt install ./hello_1.0.0_amd64.deb
 	out
 
