@@ -6,10 +6,15 @@ build:
 
 create_files_for_packaging:
 	mkdir -p hello_1.0.0_amd64
-	mkdir -p hello_1.0.0_amd64/DEBIAN
-	cp control hello_1.0.0_amd64/DEBIAN/
 	mkdir -p hello_1.0.0_amd64/usr/bin
 	cp out hello_1.0.0_amd64/usr/bin/
+	mkdir -p hello_1.0.0_amd64/DEBIAN
+	touch hello_1.0.0_amd64/DEBIAN/control
+	echo 'Package: Triangle' >> hello_1.0.0_amd64/DEBIAN/control
+	echo 'Version: 1.0.0-1' >> hello_1.0.0_amd64/DEBIAN/control
+	echo 'Architecture: amd64' >> hello_1.0.0_amd64/DEBIAN/control
+	echo 'Maintainer: Ugur Alp <uguralp9948@gmail.com>' >> hello_1.0.0_amd64/DEBIAN/control
+	echo 'Description: hello world as debian package' >> hello_1.0.0_amd64/DEBIAN/control
 
 dist: build create_files_for_packaging 
 	dpkg-deb -b hello_1.0.0_amd64/

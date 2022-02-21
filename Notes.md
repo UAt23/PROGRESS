@@ -321,3 +321,17 @@ Jenkins
         -root@b0ce03379a2e:/home/deneme# cmake CMakeLists.txt
         -root@b0ce03379a2e:/home/deneme# make
         -root@b0ce03379a2e:/home/deneme# ./runTests     
+
+
+    --Pipeline
+        // Bir jenkins hattımız olsun
+        // Repodan git clone yapsın
+        // cpp kodlarını derlesin. make build
+        // dinamik olması gereken isimler parametrik olsun
+        // Agent ile çalışsın
+        // cpp kodlarını test etsin. make test
+        // Distribute etsin. deb pakti oluşucak.
+
+
+        // Kubernetes HELM CHART var
+        // Prometheus, Grafana, Loki, Elasticsearch 
