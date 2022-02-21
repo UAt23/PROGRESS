@@ -2,29 +2,29 @@
 
 build: 
 	g++ -c main.cpp
-	g++ main.o -o out
+	g++ main.o -o ${APPLICATION_NAME}
 
 clean:
 	rm *.o out
-	rm -rf hello_1.0.0_amd64
+	rm -rf $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}
 
 create_files_for_packaging:
-	mkdir -p hello_1.0.0_amd64
-	mkdir -p hello_1.0.0_amd64/usr/bin
-	cp out hello_1.0.0_amd64/usr/bin/
-	mkdir -p hello_1.0.0_amd64/DEBIAN
-	touch hello_1.0.0_amd64/DEBIAN/control
-	echo 'Package: Triangle' >> hello_1.0.0_amd64/DEBIAN/control
-	echo 'Version: 1.0.0-1' >> hello_1.0.0_amd64/DEBIAN/control
-	echo 'Architecture: amd64' >> hello_1.0.0_amd64/DEBIAN/control
-	echo 'Maintainer: Ugur Alp <uguralp9948@gmail.com>' >> hello_1.0.0_amd64/DEBIAN/control
-	echo 'Description: hello world as debian package' >> hello_1.0.0_amd64/DEBIAN/control
+	mkdir -p $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}
+	mkdir -p $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/usr/bin
+	cp out $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/usr/bin/
+	mkdir -p $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN
+	touch $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
+	echo 'Package: Triangle' >> $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
+	echo 'Version: 1.0.0-1' >> $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
+	echo 'Architecture: amd64' >> $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
+	echo 'Maintainer: Ugur Alp <uguralp9948@gmail.com>' >> $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
+	echo 'Description: hello world as debian package' >> $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/DEBIAN/control
 
 dist: build create_files_for_packaging 
-	dpkg-deb -b hello_1.0.0_amd64/
-	make --file=Makefile_nec clean
-	apt install ./hello_1.0.0_amd64.deb
-	out
+	dpkg-deb -b $(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}/
+	make --file=${MAKE_FILE_NAME} clean
+	apt install ./$(APPLICATION_NAME)_${VERSION}-${REV_NUMBER}_${DEB_ARCHITECTURE}.deb
+	${APPLICATION_NAME}
 
 test:
 	./runTests	
