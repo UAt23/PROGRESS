@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stdlib.h>
 
-int TypeOfTriangle(int, int, int);
+
 
 class Triangle {
 	public:
@@ -12,7 +12,7 @@ class Triangle {
 			std::cout << "I Say Hello World!" << std::endl;
 		}
 
-        int TypeOfTriangle(int a, int b, int c) {
+		int TypeOfTriangle(int a, int b, int c) {
             if (a < 0 || b < 0 || c < 0) return -1;
             if (!(a + b > c && b + c > a && a + c > b))
                 return 0;
@@ -23,8 +23,6 @@ class Triangle {
             else
                 return 3;            
         }
-
-		
 };
 
 
