@@ -19,15 +19,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                def applicationname = params.APPLICATION_NAME
-                echo "Building ${applicationname}"
-                sh "make --file=${MAKE_FILE_NAME} build APPLICATION_NAME=${applicationname}"
+                echo "Building ${params.APPLICATION_NAME}"
+                sh "make --file=${MAKE_FILE_NAME} build APPLICATION_NAME=${params.APPLICATION_NAME}"
             }
         }
         stage('Test') {
             steps {
-                def applicationname = params.APPLICATION_NAME
-                echo "Testing ${applicationname}"
+                echo "Testing ${params.APPLICATION_NAME}"
                 sh 'cmake CMakeLists.txt'
                 sh 'make'
                 sh "make --file=${MAKE_FILE_NAME} test"
@@ -36,9 +34,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                def applicationname = params.APPLICATION_NAME
-                echo "Deploying ${applicationname}"
-                sh "make --file=${MAKE_FILE_NAME} dist APPLICATION_NAME=${applicationname} MAKE_FILE_NAME=${MAKE_FILE_NAME} DEB_ARCHITECTURE=${params.DEB_ARCHITECTURE} REV_NUMBER=${params.REV_NUMBER} VERSION=${params.VERSION}"
+                echo "Deploying ${params.APPLICATION_NAME}"
+                sh "make --file=${MAKE_FILE_NAME} dist APPLICATION_NAME=${params.APPLICATION_NAME} MAKE_FILE_NAME=${MAKE_FILE_NAME} DEB_ARCHITECTURE=${params.DEB_ARCHITECTURE} REV_NUMBER=${params.REV_NUMBER} VERSION=${params.VERSION}"
             }
         }
     }
