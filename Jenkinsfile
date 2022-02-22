@@ -35,7 +35,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Deploying ${params.APPLICATION_NAME}"
-                sh "make --file=${MAKE_FILE_NAME} dist APPLICATION_NAME=${params.APPLICATION_NAME}  DEB_ARCHITECTURE=${params.DEB_ARCHITECTURE} REV_NUMBER=${params.REV_NUMBER} VERSION=${params.VERSION} MAKE_FILE_NAME=${params.MAKE_FILE_NAME}"
+                sh "make --file=${MAKE_FILE_NAME} dist APPLICATION_NAME=${params.APPLICATION_NAME} DEB_ARCHITECTURE=${params.DEB_ARCHITECTURE} REV_NUMBER=${params.REV_NUMBER} VERSION=${params.VERSION} MAKE_FILE_NAME=${params.MAKE_FILE_NAME}"
             }
         }
     }
