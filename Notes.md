@@ -338,6 +338,7 @@ Jenkins
         // Prometheus, Grafana, Loki, Elasticsearch
         //Prometheus helm chart ı install edip çalıştığını gör (https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
             //portforward yapıp browserda görüntüle  (https://itnext.io/kubernetes-monitoring-with-prometheus-in-15-minutes-8e54d1de2e13)
+        //prometheus ve grafana kuralım helm chart ile (ayrı ayrı), prometheus'u da kendisinin ve grafananın metriklerini görebilecek şekilde ayarlayalım    
         
         -minikube start
         -kubectl get pods //Check if it worked
