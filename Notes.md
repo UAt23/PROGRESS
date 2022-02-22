@@ -218,6 +218,7 @@ Jenkins
         -- Jenkins project --
           - Agent tanımlama
           - İş tanımlama
+          - Parameters in Jenkins: https://itnext.io/jenkins-tutorial-part-3-parameterized-pipeline-3898643ac6ad
 
 
     -- Makefile --
@@ -338,5 +339,4 @@ Jenkins
         //Prometheus helm chart ı install edip çalıştığını gör
             //portforward yapıp browserda görüntüle 
         
-        -Parameters in Jenkins: https://itnext.io/jenkins-tutorial-part-3-parameterized-pipeline-3898643ac6ad
          
