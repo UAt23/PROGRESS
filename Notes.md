@@ -169,7 +169,7 @@ Jenkins
        
         --Jenkisn container--
        
-        -docker container run --name Jenkins --rm -d --network jenkins  -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock  -p 8080:8080 -p 50000:50000 jenkins:lts
+        -docker container run --name Jenkins -d --network jenkins  -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock  -p 8080:8080 -p 50000:50000 jenkins:lts
             -used this one to create the container
 
         -docker container logs ID

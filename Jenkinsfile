@@ -38,5 +38,11 @@ pipeline {
                 sh "make --file=${MAKE_FILE_NAME} dist APPLICATION_NAME=${params.APPLICATION_NAME} DEB_ARCHITECTURE=${params.DEB_ARCHITECTURE} REV_NUMBER=${params.REV_NUMBER} VERSION=${params.VERSION} MAKE_FILE_NAME=${params.MAKE_FILE_NAME}"
             }
         }
+        stage('Docker') {
+            steps {
+                
+                sh "docker ps -a"
+            }
+        }
     }
 }
