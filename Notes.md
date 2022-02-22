@@ -333,10 +333,16 @@ Jenkins
         // cpp kodlarını test etsin. make test
         // Distribute etsin. deb pakti oluşucak.
 
-
+    --K8s, Helm
         // Kubernetes HELM CHART var
         // Prometheus, Grafana, Loki, Elasticsearch
-        //Prometheus helm chart ı install edip çalıştığını gör
+        //Prometheus helm chart ı install edip çalıştığını gör (https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
             //portforward yapıp browserda görüntüle 
         
-         
+        -minikube start
+        -kubectl get pods //Check if it worked
+        -helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+        -helm repo update
+        -helm install prometheus prometheus-community/kube-prometheus-stack
+        -kubectl get pod
+        -
