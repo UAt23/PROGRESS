@@ -4,9 +4,7 @@ This repository contains information about my learning progress
 
 
 -- Current Situation --
-  -Created a pipeline in Jenkins
-    -Adding parameters
-
+    -Leaning to use Helm 
 
 
 
@@ -32,6 +30,8 @@ This repository contains information about my learning progress
     -Working on Kubernetes using minikube this time (reached to a checkpoint)
     -Jenkinsfil and C++ test is my topic now
     -Trying to understand how to create a test using CMake 
+    -Created a pipeline in Jenkins
+      -Added parameters
 
     --
 
