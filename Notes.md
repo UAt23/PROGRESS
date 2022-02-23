@@ -353,5 +353,14 @@ Jenkins
         -helm install grafana grafana/grafana
             -for pasword (kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo)
 
+
+        -helm pull prometheus-community/prometheus
+        -cd prometheus
+        -helm install prom .
+        -kubectl get pods -w
+        -kubectl port-forward prom-prometheus-server-54fbd5cd47-w6b8p 9090
+        -kubectl get svc
+        -kubectl get pods -o wide
+
         -!!!! Need to use prometheus-operator since it is configured the K8s and grafana (https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
 
