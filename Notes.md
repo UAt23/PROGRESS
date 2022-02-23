@@ -347,3 +347,6 @@ Jenkins
         -helm install prometheus prometheus-community/prometheus
         -kubectl get pod
         -kubectl port-forward prometheus-prometheus-kube-prometheus-prometheus-0  9090
+
+        -helm repo add grafana https://grafana.github.io/helm-charts
+        -helm repo update
