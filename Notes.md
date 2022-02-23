@@ -352,5 +352,5 @@ Jenkins
         -helm repo update
         -helm install grafana grafana/grafana
 
-        -!!!! Need to use prometheus-operator since it is configured the K8s
+        -!!!! Need to use prometheus-operator since it is configured the K8s and grafana (https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
 
