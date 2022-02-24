@@ -333,7 +333,7 @@ Jenkins
         // cpp kodlarını test etsin. make test
         // Distribute etsin. deb pakti oluşucak.
 
-    --K8s, Helmi Protheus
+    --K8s, Helm Protheus
         // Kubernetes HELM CHART var
         // Prometheus, Grafana, Loki, Elasticsearch
         //Prometheus helm chart ı install edip çalıştığını gör (https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
@@ -364,3 +364,9 @@ Jenkins
 
         -!!!! Need to use prometheus-operator since it is configured the K8s and grafana (https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
 
+
+
+
+    -- HELM --
+
+        -(https://www.freecodecamp.org/news/what-is-a-helm-chart-tutorial-for-kubernetes-beginners/)
