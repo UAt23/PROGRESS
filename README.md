@@ -5,7 +5,7 @@ This repository contains information about my learning progress
 
 -- Current Situation --
     
-    -Leaning to use Helm, Prometheus, Grafana 
+    -Learning to use Helm, Prometheus, Grafana 
 
 
 
