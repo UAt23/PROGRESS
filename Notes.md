@@ -370,3 +370,5 @@ Jenkins
     -- HELM --
 
         -(https://www.freecodecamp.org/news/what-is-a-helm-chart-tutorial-for-kubernetes-beginners/)
+        -(https://opensource.com/article/20/5/helm-charts)
+        -(https://www.linkedin.com/pulse/deploy-prometheus-grafana-k8s-using-helm-chart-saurabh-kothawade/)
