@@ -372,3 +372,4 @@ Jenkins
         -(https://www.freecodecamp.org/news/what-is-a-helm-chart-tutorial-for-kubernetes-beginners/)
         -(https://opensource.com/article/20/5/helm-charts)
         -(https://www.linkedin.com/pulse/deploy-prometheus-grafana-k8s-using-helm-chart-saurabh-kothawade/)
+        -Kubernetes is the orchestrator of the containers, so I think we can say that the Helm is the maestro that manipulates the sheets (manifests) 
