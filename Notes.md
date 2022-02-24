@@ -354,7 +354,7 @@ Jenkins
             -for pasword (kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo)
 
 
-        -helm pull prometheus-community/prometheus
+        -helm pull prometheus-community/prometheus (then you need to untar the pulled tar file)
         -cd prometheus
         -helm install prom .
         -kubectl get pods -w
