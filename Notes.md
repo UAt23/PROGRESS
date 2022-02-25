@@ -364,7 +364,7 @@ Jenkins
 
         -!!!! Need to use prometheus-operator since it is configured the K8s and grafana (https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
 
-
+        -- Grafana data source prometheus URL = http://prom-prometheus-server:80
 
 
     -- HELM --
