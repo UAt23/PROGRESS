@@ -3,7 +3,7 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: {{ .Values.appname }}
+    app: {{ .Values.appName }}
   name: {{ .Values.serviceName }}
 spec:
   ports: 
@@ -12,7 +12,7 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: {{ .Values.appname }}
+    app: {{ .Values.appName }}
   type: ClusterIP
 status:
   loadBalancer: {}
