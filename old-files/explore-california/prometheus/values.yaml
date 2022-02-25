@@ -1413,7 +1413,7 @@ serverFiles:
       - job_name: 'californiaweb'
         scrape_interval: 5s
         static_configs:
-          - targets: ['192.168.49.2:80']                  
+          - targets: ['explorecalifornia-svc:80']                  
 
       # A scrape configuration for running Prometheus on a Kubernetes cluster.
       # This uses separate scrape configs for cluster components (i.e. API server, node)
