@@ -6,7 +6,8 @@ This repository contains information about my learning progress
 -- Current Situation --
     
     -Learning to use Helm, Prometheus, Grafana
-      -Grafana features 
+      -Grafana features
+      -Loki 
 
 
 
