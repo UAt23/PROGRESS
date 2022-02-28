@@ -4,7 +4,8 @@ metadata:
   creationTimestamp: null
   name: {{ .Values.appName }}
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "9113"
 spec:
   rules:
   - host: {{ .Values.appName }}
