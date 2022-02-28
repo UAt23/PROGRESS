@@ -374,3 +374,8 @@ Jenkins
         -(https://www.linkedin.com/pulse/deploy-prometheus-grafana-k8s-using-helm-chart-saurabh-kothawade/)
         -Kubernetes is the orchestrator of the containers, so I think we can say that the Helm is the maestro that manipulates the sheets (manifests) 
         -(https://www.linkedin.com/pulse/deploy-prometheus-grafana-k8s-using-helm-chart-saurabh-kothawade/)
+
+    -- LOKI --
+
+        -Loki installation (https://grafana.com/docs/loki/latest/installation/helm/)
+
