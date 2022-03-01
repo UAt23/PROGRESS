@@ -381,10 +381,12 @@ Jenkins
             -https://github.com/grafana/helm-charts/tree/main/charts/loki-stack
         -helm upgrade --install loki grafana/loki-stack     --set fluent-bit.enabled=true,promtail.enabled=true
 
-        dependencies:
-          - name: loki-stack
-            version: "2.0.0"
-            repository: https://grafana.github.io/helm-charts
-            condition: "loki-stack.enabled"
+        -Can we use this?
+            dependencies:
+            - name: loki-stack
+                version: "2.0.0"
+                repository: https://grafana.github.io/helm-charts
+                condition: "loki-stack.enabled"
+
       
 
